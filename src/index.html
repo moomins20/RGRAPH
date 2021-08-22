@@ -5,12 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les RGraph de Judith & Sabrina</title>
-
-    <link rel="stylesheet" href="/src/assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
     <header>   
-        <h1>bonjour</h1>
+        <h1>Le Québec en statistiques</h1>
     </header>
+    <main>
+        <!-- Canvas radar chart -->
+        <canvas id="radar" width="500" height="400">[No canvas support]</canvas>
+        <!-- Canvas line chart -->
+        <canvas id="line" width="700" height="250">[No canvas support]</canvas>
+        <!-- Canvas thermometer -->
+        <canvas id="thermo" width="150" height="500">[No canvas support]</canvas>
+        <!-- Canvas donut -->
+        <canvas id="donut" width="600" height="350">[No canvas support]</canvas>
+        <!-- SVG semi-circular progress bar -->
+        <div id="semicircular"></div>
+        <!-- SVG bar chart -->
+        <div id="bar"></div>
+    </main>
+    <footer>
+        <p>Judith Rancourt et Sabrina Sylvestre | PMI <time datetime="2021">2021</time></p>
+    </footer>
+
+
+
+    <!-- CANVAS -->
+    <script src="./assets/scripts/RGraph.common.core.js"></script>
+    <script src="./assets/scripts/RGraph.common.dynamic.js"></script>
+    <script src="./assets/scripts/RGraph.common.tooltips.js"></script>
+    <!-- Radar chart -->
+    <script src="./assets/scripts/RGraph.radar.js"></script>
+    <!-- Line chart -->
+    <script src="./assets/scripts/RGraph.line.js"></script>
+    <!-- Thermometer -->
+    <script src="./assets/scripts/RGraph.thermometer.js"></script>
+    <!-- Donut -->
+    <script src="./assets/scripts/RGraph.pie.js"></script>
+
+    <!-- SVG -->
+    <script src="./assets/scripts/RGraph.svg.common.core.js"></script>
+    <script src="./assets/scripts/RGraph.svg.common.tooltips.js"></script>
+    <!-- Semi-circular progress bar -->
+    <script src="./assets/scripts/RGraph.svg.semicircularprogress.js"></script>
+    <!-- Bar chart -->
+    <script src="./assets/scripts/RGraph.svg.bar.js"></script>
+
+    <!--  -->
+    <script src="./assets/scripts/index.js"></script>
 </body>
 </html>
