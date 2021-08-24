@@ -1,4 +1,3 @@
-
 // CANVAS RADAR CHART ------------------------------------
 
 const dessineMonRadar = () => {
@@ -38,12 +37,10 @@ const dessineMonRadar = () => {
 
 const dessineMaLigne = () => {
     data = [
-        [8,7,6,4,9,5,6,7,9],
-        [4,3,5,8,6,4,2,4,9],
-        [8,4,9,5,3,5,1,2,5]
+        [1.36,1.02,1.06,1.63,1.91,2.33,3.81,3.58,4.06,4.56,3.35,2.71,4.99,7.49,11,10.67,7.54,7.98,8.97,9.15,10.13,12.47,10.77,5.86,4.31,3.96,4.2,4.36,4.03,4.98,4.78,5.63,1.49,1.87,0.17,2.15,1.57,1.62,1,1.74,2.72,2.53,2.26,2.76,1.86,2.21,2,2.14,2.37,0.3,1.78,2.91,1.52,0.94,1.91,1.13,1.43,1.6,2.27,1.95,0.72]
     ];
 
-    xaxisLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+    xaxisLabels = ['1960', '1965', '1970', '1975', '1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2020'];
 
     new RGraph.Line({
         id: 'line',
@@ -51,17 +48,17 @@ const dessineMaLigne = () => {
         options: {
             tooltips: '%{key}',
             tooltipsFormattedUnitsPost: '%',
-            tooltipsFormattedKeyColors: ['red','blue','#0f0'],
-            tooltipsFormattedKeyLabels: ['John','Richard','Luis'],
+            tooltipsFormattedKeyColors: ['#141E61'],
+            tooltipsFormattedKeyLabels: ['Taux d\'intérêt de'],
             tooltipsCss: {
                 fontSize: '16pt',
                 textAlign: 'left'
             },
             backgroundGridVlines: false,
             backgroundGridBorder: false,
-            colors: ['red','blue','green'],
-            linewidth: 2,
-            spline: true,
+            colors: ['#141E61'],
+            linewidth: 3,
+            spline: false,
             tickmarksStyle: null,
             xaxisLabels: xaxisLabels,
             xaxis: false,
