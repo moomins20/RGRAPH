@@ -1,34 +1,41 @@
 // CANVAS RADAR CHART ------------------------------------
 
 const dessineMonRadar = () => {
-    labels = ['Montréal','Québec','Laval','Gatineau','Longueuil','Sherbrooke','Lévis','Saguenay', 'Trois-Rivières', 'Terrebonne'];
+    labels = ['Hommes', 'Femmes', '15-24 ans','25-54 ans', '55 ans et plus', 'Sans diplôme d\'études secondaires', 'Diplôme d\'études secondaires', 'Études postsecondaires', 'Diplôme universitaire'];
 
     new RGraph.Radar({
         id: 'radar',
         data: [
-            [1675174,522647,405926,268634,233955,156522,140075,146039,132542,107571],
-            [1821070,550326,442648,290239,252828,171158,149929,147410,140420,119450]
+            [5.9, 5, 9.4, 4.7, 5.5, 10.3, 6.2, 5.3, 3.8],
+            [5.7, 4.5, 8.5, 4.4, 5.2, 9.0, 6.3, 4.7, 3.9],
+            [9.1, 8.6, 17.2, 7.3, 8.3, 13.9, 11.1, 9.1, 5.9]
         ],
         options: {
-            backgroundCircles: true,
+            backgroundCircles: true, 
             textSize: 16,
             labels: labels,
-            colorsStroke: ['green', 'yellow'],
+            labelsSize: 12,
+            colorsStroke: ['#e9c46a', '#ce796b', '#84a59d'],
             colors: ['rgba(0,0,0,0)'],
             linewidth: 3,
             marginTop: 15,
             marginBottom: 15,
             marginLeft: 85,
             marginRight: 125,
-            tooltips: '<b>%{property:labels[%{index}]}\'s results:</b>%{key}',
-            tooltipsFormattedKeyLabels: ['2011','2020'],
-            tooltipsFormattedKeyColors: ['green', 'yellow'],
-            tooltipsFormattedUnitsPost: 'habitants',
+            tooltips: '<b>%{property:labels[%{index}]}</b>%{key}',
+            tooltipsFormattedKeyLabels: ['2018 :','2019 :','2020 :'],
+            tooltipsFormattedKeyColors: ['#e9c46a', '#ce796b', '#84a59d'],
+            tooltipsFormattedUnitsPost: '%',
             tooltipsCss: {
-                fontSize: '16pt',
-                boxShadow: '',
-                textAlign: 'left'
-            }
+                fontSize: '18px',
+                boxShadow: '2px 2px 5px #141e61',
+                textAlign: 'left',
+                backgroundColor: '#212529',
+            },
+            tooltipsFormattedPoint: ',',
+            tooltipsFormattedDecimals: '2',
+            tooltipsFormattedKeyColorsShape: 'circle',
+            title: 'Taux de chômage'
         }
     }).draw();
 }
@@ -48,7 +55,7 @@ const dessineMaLigne = () => {
         options: {
             tooltips: '%{key}',
             tooltipsFormattedUnitsPost: '%',
-            tooltipsFormattedKeyColors: ['#141E61'],
+            tooltipsFormattedKeyColors: ['#141e61'],
             tooltipsFormattedKeyLabels: ['Taux d\'intérêt de'],
             tooltipsCss: {
                 fontSize: '16pt',
@@ -56,7 +63,7 @@ const dessineMaLigne = () => {
             },
             backgroundGridVlines: false,
             backgroundGridBorder: false,
-            colors: ['#141E61'],
+            colors: ['#141e61'],
             linewidth: 3,
             spline: false,
             tickmarksStyle: null,
@@ -72,21 +79,65 @@ const dessineMaLigne = () => {
 
 const dessineMonThermometre = () => {
     new RGraph.Thermometer({
-        id: 'thermo',
+        id: 'thermo1',
         min: 0,
-        max: 100,
-        value: 52,
+        max: 10,
+        value: 6.6,
         options: {
             marginLeft: 45,
             marginRight: 45,
-            tooltips: '<span style="font-size: 14pt">Todays temperature</span><br/>%{key}',
-            colors: ['red'],
+            // tooltips: '<span style="font-size: 14pt">Todays temperature</span><br/>%{key}',
+            colors: ['#141e61'],
+            tooltipsFormattedKeyLabels: ['London'],
+            tooltipsFormattedUnitsPost: '°C',
+            tooltipsCss: {
+                fontSize: '18pt',
+                textAlign: 'left'
+            },
+            title: 'Montréal',
+            titleSize: 16,
+            titleOffsety: -5,
+            scaleDecimals: '1',
+            scalePoint: ',',
+            scaleUnitsPost: '°C',
+            shadow: true,
+            shadowColor: '#141e61',
+            shadowBlur: 5,
+            colors: ['Gradient(#141e61:#00296b:#141e61)'],
+            labelsValueBold: true,
+
+
+            
+        }
+    }).draw();
+
+    new RGraph.Thermometer({
+        id: 'thermo2',
+        min: 0,
+        max: 10,
+        value: 4.6,
+        options: {
+            marginLeft: 45,
+            marginRight: 45,
+            // tooltips: '<span style="font-size: 14pt">Todays temperature</span><br/>%{key}',
+            colors: ['#141e61'],
             tooltipsFormattedKeyLabels: ['London'],
             tooltipsFormattedUnitsPost: '°',
             tooltipsCss: {
                 fontSize: '18pt',
                 textAlign: 'left'
-            }
+            },
+            title: 'Québec',
+            titleSize: 16,
+            titleOffsety: -5,
+            scaleDecimals: '1',
+            scalePoint: ',',
+            scaleUnitsPost: '°C',
+            shadow: true,
+            shadowColor: '#141e61',
+            shadowBlur: 5,
+            colors: ['Gradient(#141e61:#00296b:#141e61)'],
+            labelsValueBold: true,
         }
     }).draw();
 }
@@ -140,8 +191,8 @@ const dessineMonDemiCercle = () => {
 // SVG BAR CHART -----------------------------------------------
 
 const dessineMesBarres = () => {
-    data = [[5,3],[4,6],[4,5],[8,5],[3,6],[5,6],[8,5],[1,9],[4,3],[4,8],[5,8],[4,8]];
-    labels = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Sep','Dec']
+    data = [[220647,209603],[237746,228144],[4,5],[8,5],[3,6],[5,6],[8,5],[1,9],[4,3],[4,8]];
+    labels = ['0-4','5-9','10-14','15-19','20-24','25-44','45-64','65-74','75-99','100 et +']
 
     new RGraph.SVG.Bar({
         id: 'bar',
@@ -156,30 +207,30 @@ const dessineMesBarres = () => {
             textSize: 12,
             yaxis: false,
             yaxisScaleUnitsPre: '',  // Default
-            yaxisScaleUnitsPost: 'k',
+            // yaxisScaleUnitsPost: 'k',
             yaxisScalePoint: '.',    // Default
             yaxisScaleThousand: ',', // Default
             yaxisScaleDecimals: 0,
-            xaxisLinewidth: 3,
+            yaxisScaleMax: 2000,
+            xaxisLinewidth: 5,
             xaxisTickmarks: false,
             xaxisLabels: '%{global:labels[%{index}]}',
             colors: ['#5cf', 'black'],
             marginInner: 9,
             marginInnerGrouped: 2,
-            titleSubtitle: 'Turnover grouped by sales team',
-            title: 'Monthly sales figures',
+            titleSubtitle: '',
+            title: 'Population selon le groupe d\'âge et le sexe, 2020',
             titleBold: true,
             titleSize: 16,
             tooltips: '%{key}',
-            tooltipsFormattedUnitsPre: '$',
-            tooltipsFormattedUnitsPost: ',000',
-            tooltipsFormattedKeyLabels: ['Sales team A','Sales team B'],
+            tooltipsFormattedKeyLabels: ['Hommes :','Femmes :'],
             tooltipsCss: {
                 backgroundColor: '#333',
                 fontWeight: 'bold',
                 fontSize: '14pt',
                 opacity: 0.85
             }
+            
         }
     }).wave();
 }
