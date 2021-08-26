@@ -22,7 +22,7 @@ const dessineMonRadar = () => {
             marginBottom: 15,
             marginLeft: 85,
             marginRight: 125,
-            tooltips: '<b>%{property:labels[%{index}]}</b>%{key}',
+            tooltips: '<strong>%{property:labels[%{index}]}</strong>%{key}',
             tooltipsFormattedKeyLabels: ['2018 :','2019 :','2020 :'],
             tooltipsFormattedKeyColors: ['#e9c46a', '#ce796b', '#84a59d'],
             tooltipsFormattedUnitsPost: '%',
@@ -44,32 +44,52 @@ const dessineMonRadar = () => {
 
 const dessineMaLigne = () => {
     data = [
-        [1.36,1.02,1.06,1.63,1.91,2.33,3.81,3.58,4.06,4.56,3.35,2.71,4.99,7.49,11,10.67,7.54,7.98,8.97,9.15,10.13,12.47,10.77,5.86,4.31,3.96,4.2,4.36,4.03,4.98,4.78,5.63,1.49,1.87,0.17,2.15,1.57,1.62,1,1.74,2.72,2.53,2.26,2.76,1.86,2.21,2,2.14,2.37,0.3,1.78,2.91,1.52,0.94,1.91,1.13,1.43,1.6,2.27,1.95,0.72]
+        [1.36,1.02,1.06,1.63,1.91,2.33,3.81,3.58,4.06,4.56,3.35,2.71,4.99,7.49,11.00,10.67,7.54,7.98,8.97,9.15,10.13,12.47,10.77,5.86,4.31,3.96,4.20,4.36,4.03,4.98,4.78,5.63,1.49,1.87,0.17,2.15,1.57,1.62,1.00,1.74,2.72,2.53,2.26,2.76,1.86,2.21,2.00,2.14,2.37,0.30,1.78,2.91,1.52,0.94,1.91,1.13,1.43,1.60,2.27,1.95,0.72]
     ];
 
     xaxisLabels = ['1960', '1965', '1970', '1975', '1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2020'];
 
+    
+    
     new RGraph.Line({
         id: 'line',
         data: data,
         options: {
-            tooltips: '%{key}',
+            mesannees: ['1960', '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968', '1969', '1970', '1971', '1972', '1973', '1974', '1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+
+            tooltips: '<strong>%{property:mesannees[%{index}]}</strong> <br><em>Taux d\'inflation : %{value_formatted}</em>',
+            tooltipsFormattedDecimals: '2',
             tooltipsFormattedUnitsPost: '%',
-            tooltipsFormattedKeyColors: ['#141e61'],
-            tooltipsFormattedKeyLabels: ['Taux d\'intérêt de'],
+            tooltipsFormattedPoint: ',',
+            tooltipsFormattedKeyColors: [],
             tooltipsCss: {
-                fontSize: '16pt',
-                textAlign: 'left'
+                fontSize: '18px',
+                boxShadow: '2px 2px 5px #141e61',
+                textAlign: 'center',
+                backgroundColor: '#212529',
             },
-            backgroundGridVlines: false,
-            backgroundGridBorder: false,
+            backgroundGridVlines: true,
+            backgroundGridBorder: true,
             colors: ['#141e61'],
             linewidth: 3,
+            marginTop: 10,
+            marginBottom: 10,
             spline: false,
-            tickmarksStyle: null,
+            tickmarksStyle: 'circle',
+            tickmarksSize: 1,
+            tickmarksColor: '#93B5C6',
+            title: 'Indice des prix à la consommation (Croissance annuelle en %)',
+            titleBold: true,
+            titleOffsety: -20,
             xaxisLabels: xaxisLabels,
             xaxis: false,
             yaxis: false,
+            xaxisTitle: 'Année',
+            yaxisTitle: 'Pourcentage (%)',
+            xaxisTitleItalic: true,
+            yaxisTitleItalic: true,
+            xaxisTitleSize: '10pt',
+            yaxisTitleSize: '10pt',
             marginLeft: 40
         }
     }).trace();
@@ -145,24 +165,31 @@ const dessineMonThermometre = () => {
 // CANVAS DONUT -----------------------------------------------
 
 const dessineMonBeigne = () => {
-    data   = [45,57,48,32, 26,41];
-    labels = ['Jan', 'Ben', 'Mark', 'Lucy','Jill', 'James'];
+    data = [4.8, 6.9, 14.3, 74.1];
+    labels = ['Venant d\'autres pays','Américains', 'Canadiens des autres provinces', 'Québécois'];
 
     new RGraph.Pie({
         id: 'donut',
         data: data,
         options: {
             labels: labels,
-            tooltips: 'Results:<br />%{key}',
-            tooltipsFormattedKeyLabels: labels,
+            tooltips: '<strong>%{property:labels[%{index}]} : </strong> <br><em>%{key}</em>',
+            tooltipsFormattedKeyLabels: data,
+            tooltipsFormattedDecimals: '1',
+            tooltipsFormattedUnitsPost: '%',
+            tooltipsFormattedPoint: ',',
             tooltipsCss: {
                 fontSize: '16pt',
                 textAlign: 'left'
             },
-            linewidth: 3,
-            colorsStroke: 'white',
+            linewidth: 5,
+            labelsSticksLinewidth: 2,
+            colorsStroke: '#D2D2D2',
+            colors: [ '#787A91', '#FFAA4C', '#7D0633', '#141E61'],
             variant: 'donut',
-            shadow: false
+            shadow: false,
+            title: 'Provenance des touristes au Québec en 2019',
+            titleBold: true
         }
     }).draw();
 }
@@ -174,10 +201,10 @@ const dessineMonDemiCercle = () => {
         id: 'semicircular',
         min: 0,
         max: 100,
-        value:50,
+        value:78,
         options: {
             labelsCenterDecimals: 1,
-            tooltips: 'Progress: %{value}%',
+            tooltips: 'Portion du Québec en terre: %{value}%',
             tooltipsCss: {
                 backgroundColor: '#333',
                 fontWeight: 'bold',
