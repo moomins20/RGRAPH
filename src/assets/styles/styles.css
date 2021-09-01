@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
 body {
     background-color: rgba(0, 0, 0, 0.178);
     display: flex;
@@ -12,15 +22,35 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    flex-grow: 1;
+    flex-grow: 1; 
+    /* width: 100%; */
 }
 
-#semicircular {
-    width: 500px;
-    height: 500px;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
-#bar {
-    width: 700px;
-    height: 300px;
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
 }
+
+h2, p {
+    margin: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+

@@ -13,26 +13,56 @@
     </header>
     <main>
         <!-- Canvas radar chart -->
-        <canvas id="radar" width="500" height="400">[No canvas support]</canvas>
+        <section class="container">
+            <h2>Taux de chômage</h2>
+            <div>
+                <canvas id="radar">[No canvas support]</canvas>
+            </div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.30-31)</p>
+        </section>
         <!-- Canvas line chart -->
-        <canvas id="line" width="700" height="250">[No canvas support]</canvas>
+        <section class="container">
+            <h2>Indice des prix à la consommation<br>(croissance annuelle en %)</h2>
+            <div>
+                <canvas id="line">[No canvas support]</canvas>
+            </div>
+            <p>Source : <a href="https://perspective.usherbrooke.ca/bilan/servlet/BMTendanceStatPays?codeTheme=2&codeStat=FP.CPI.TOTL.ZG&codePays=CAN&optionsPeriodes=Aucune&codeTheme2=1&codeStat2=x&codePays2=CAN&optionsDetPeriodes=avecNomP" target="_blank">Université Sherbrooke</a>, 2021</p>
+        </section>
         <!-- Canvas thermometer -->
-        <canvas id="thermo1" width="150" height="500">[No canvas support]</canvas>
-        <canvas id="thermo2" width="150" height="500">[No canvas support]</canvas>
+        <section class="container">
+            <h2>Température annuelle moyenne</h2>
+            <div>
+                <canvas id="thermo1">[No canvas support]</canvas>
+                <canvas id="thermo2">[No canvas support]</canvas>
+            </div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.8)</p>
+        </section>
         <!-- Canvas donut -->
-        <canvas id="donut" width="600" height="350">[No canvas support]</canvas>
+        <section class="container">
+            <h2>Provenance des touristes en 2019</h2>
+            <div>
+                <canvas id="donut">[No canvas support]</canvas>
+            </div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.42)</p>
+        </section>
         <!-- SVG semi-circular progress bar -->
-        <div id="semicircular"></div>
+        <section class="container">
+            <h2>Superficie en terre et en eau</h2>
+            <div id="semicircular"></div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.7)</p>
+        </section>
         <!-- SVG bar chart -->
-        <div id="bar"></div>
+        <section class="container">
+            <h2>Répartition des ménages selon la taille</h2>
+            <div id="bar"></div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.17)</p>
+        </section>
     </main>
     <footer>
         <p>Judith Rancourt et Sabrina Sylvestre | PMI <time datetime="2021">2021</time></p>
     </footer>
 
-
-
-    <!-- CANVAS -->
+    <!-- SCRIPTS CANVAS -->
     <script src="./assets/scripts/RGraph.common.core.js"></script>
     <script src="./assets/scripts/RGraph.common.dynamic.js"></script>
     <script src="./assets/scripts/RGraph.common.tooltips.js"></script>
@@ -48,6 +78,8 @@
     <!-- SVG -->
     <script src="./assets/scripts/RGraph.svg.common.core.js"></script>
     <script src="./assets/scripts/RGraph.svg.common.tooltips.js"></script>
+    <script src="./assets/scripts/RGraph.svg.common.key.js"></script>
+    <script src="./assets/scripts/RGraph.svg.common.ajax.js"></script>
     <!-- Semi-circular progress bar -->
     <script src="./assets/scripts/RGraph.svg.semicircularprogress.js"></script>
     <!-- Bar chart -->
