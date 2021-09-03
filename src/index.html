@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les RGraph de Judith & Sabrina</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Kaisei+HarunoUmi&family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>   
@@ -13,15 +16,21 @@
     </header>
     <main>
         <!-- Canvas radar chart -->
-        <section class="container">
+        <section class="container_radar">
             <h2>Taux de chômage</h2>
-            <div>
+            <div class="div_radar">
                 <canvas id="radar">[No canvas support]</canvas>
             </div>
             <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.30-31)</p>
         </section>
+        <!-- SVG semi-circular progress bar -->
+        <section class="container_semi">
+            <h2>Superficie en terre et en eau</h2>
+            <div id="semicircular"></div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.7)</p>
+        </section>
         <!-- Canvas line chart -->
-        <section class="container">
+        <section class="container_line">
             <h2>Indice des prix à la consommation<br>(croissance annuelle en %)</h2>
             <div>
                 <canvas id="line">[No canvas support]</canvas>
@@ -29,7 +38,7 @@
             <p>Source : <a href="https://perspective.usherbrooke.ca/bilan/servlet/BMTendanceStatPays?codeTheme=2&codeStat=FP.CPI.TOTL.ZG&codePays=CAN&optionsPeriodes=Aucune&codeTheme2=1&codeStat2=x&codePays2=CAN&optionsDetPeriodes=avecNomP" target="_blank">Université Sherbrooke</a>, 2021</p>
         </section>
         <!-- Canvas thermometer -->
-        <section class="container">
+        <section class="container_thermo">
             <h2>Température annuelle moyenne</h2>
             <div>
                 <canvas id="thermo1">[No canvas support]</canvas>
@@ -37,25 +46,19 @@
             </div>
             <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.8)</p>
         </section>
+        <!-- SVG bar chart -->
+        <section class="container_bar">
+            <h2>Répartition des ménages selon la taille</h2>
+            <div id="bar"></div>
+            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.17)</p>
+        </section>
         <!-- Canvas donut -->
-        <section class="container">
+        <section class="container_donut">
             <h2>Provenance des touristes en 2019</h2>
             <div>
                 <canvas id="donut">[No canvas support]</canvas>
             </div>
             <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.42)</p>
-        </section>
-        <!-- SVG semi-circular progress bar -->
-        <section class="container">
-            <h2>Superficie en terre et en eau</h2>
-            <div id="semicircular"></div>
-            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.7)</p>
-        </section>
-        <!-- SVG bar chart -->
-        <section class="container">
-            <h2>Répartition des ménages selon la taille</h2>
-            <div id="bar"></div>
-            <p>Source : <a href="https://bdso.gouv.qc.ca/docs-ken/multimedia/PB01600FR_qcem2021H00F00.pdf" target="_blank">Rapport <abbr title="Institut de la statistique du Québec">ISQ</abbr></a>, 2021 (p.17)</p>
         </section>
     </main>
     <footer>
