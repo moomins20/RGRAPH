@@ -1,7 +1,7 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -14,8 +14,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     margin: 10px;
+    min-height: 100vh;
 }
 
 h1 {
@@ -83,8 +83,8 @@ a {
 a:hover, a:active, a:focus {
     color: #141e61;
     font-weight: bold;
-    text-decoration: 1px underline#141e61;
     outline: none;
+    text-decoration: 1px underline#141e61;
 }
 
 footer p {
@@ -110,8 +110,8 @@ footer p {
     }
 
     .div_radar {
-        max-width: 400px;
-        max-height: 400px;
+        min-width: 400px;
+        min-height: 400px;
     }
 }
 
@@ -134,8 +134,8 @@ footer p {
     }
 
     .div_radar {
-        max-width: 500px;
-        max-height: 500px;
+        min-width: 500px;
+        min-height: 500px;
     }
 
     .container_semi {
