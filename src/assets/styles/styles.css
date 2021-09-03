@@ -46,8 +46,13 @@ section[class^=container] {
     padding: 0 50px;
 }
 
+.div_radar {
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .container_line {
-    padding-left: 30px;
+    max-width: 840px;
 }
 
 .container_donut {
@@ -75,11 +80,6 @@ a {
     text-decoration: none;
 }
 
-/* .div_radar {
-    width: fit-content;
-    height: fit-content;
-} */
-
 a:hover, a:active, a:focus {
     color: #141e61;
     font-weight: bold;
@@ -104,10 +104,15 @@ footer p {
         padding: 0 50px 0 40px;
     }
 
-    /* .div_radar {
-        width: 400px;
-        height: 400px;
-    } */
+    .container_line {
+        padding: 0 50px;
+        max-width: 500px;
+    }
+
+    .div_radar {
+        max-width: 400px;
+        max-height: 400px;
+    }
 }
 
 @media screen and (min-width: 1100px) {
@@ -116,11 +121,24 @@ footer p {
     }
 
     .container_donut {
-        padding: 0 90px 0 30px;
+        padding: 0 130px 0 70px;
     }
 
-    /* .div_radar {
-        width: 500px;
-        height: 500px;
-    } */
+    .container_line {
+        padding: 0 20px 0 50px;
+        max-width: 800px;
+    }
+
+    .container_radar {
+        padding: 0 80px;
+    }
+
+    .div_radar {
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .container_semi {
+        min-width: 660px;
+    }
 }

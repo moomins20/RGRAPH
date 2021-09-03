@@ -98,7 +98,6 @@ const dessineMaLigne = () => {
             titleBold: true,
             xaxisLabels: xaxisLabels,
             xaxis: false,
-            yaxis: false,
             yaxisTitle: 'Pourcentage (%)',
             yaxisTitleItalic: true,
             textFont: '\'Dosis\', sans-serif',
