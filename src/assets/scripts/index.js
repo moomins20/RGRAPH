@@ -11,28 +11,26 @@ const dessineMonRadar = () => {
             [9.1, 8.6, 13.9, 11.1, 9.1, 5.9, 17.2, 7.3, 8.3]
         ],
         options: {
-            // centerx: true,
-            // centery: true,
             backgroundCircles: true, 
-            colorsStroke: ['#ffaa4c', '#7d0633', '#141e61'],
             colors: ['rgba(0,0,0,0)'],
+            colorsStroke: ['#ffaa4c', '#7d0633', '#141e61'],
             tooltips: '<strong>%{property:labels[%{index}]}</strong>%{key}',
-            tooltipsFormattedKeyLabels: ['2018 :','2019 :','2020 :'],
             tooltipsFormattedKeyColors: ['#ffaa4c', '#7d0633', '#141e61'],
+            tooltipsFormattedKeyLabels: ['2018 :','2019 :','2020 :'],
             tooltipsFormattedUnitsPost: '%',
-            tooltipsFormattedPoint: ',',
             tooltipsFormattedDecimals: '2',
+            tooltipsFormattedPoint: ',',
             tooltipsFormattedKeyColorsShape: 'circle',
             linewidth: 3,
-            highlightStroke: '#fff',
             highlightFill: '#fff',
+            highlightStroke: '#fff',
             textFont: '\'Dosis\', sans-serif',
             tooltipsPointer: false,
             tooltipsCss: {
-                fontFamily: '\'Dosis\', sans-serif',
-                fontSize: '18px',
                 backgroundColor: '#212529',
                 boxShadow: '2px 2px 5px #141e61',
+                fontFamily: '\'Dosis\', sans-serif',
+                fontSize: '18px',
                 textAlign: 'left',
                 width: '140px'
             }
@@ -45,7 +43,8 @@ const dessineMonRadar = () => {
             options: {
                 labels: ['Hommes', 'Femmes', 'Sans DES', 'Avec DES', 'Études postsecondaires', 'Diplôme universitaire', '15-24 ans','25-54 ans', '55 ans +'],
                 labelsSize: 16,
-                marginBottom: 50
+                marginBottom: 50,
+                tooltipsEvent: 'mousemove'
             }
         },
         {
@@ -54,7 +53,8 @@ const dessineMonRadar = () => {
             height: 400,
             options: {
                 labels: ['Hommes', 'Femmes', 'Sans DES', 'DES', 'Postsecondaires', 'Universitaires', '15-24 ans','25-54 ans', '55 ans +'],
-                labelsSize: 14
+                labelsSize: 14,
+                tooltipsEvent: 'click'
             }
         },
         {
@@ -68,7 +68,7 @@ const dessineMonRadar = () => {
             }
         }
     ]);
-}
+};
 
 // CANVAS LINE CHART ---------------------------------------
 
@@ -83,18 +83,18 @@ const dessineMaLigne = () => {
         data: data,
         options: {
             mesannees: ['1960', '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968', '1969', '1970', '1971', '1972', '1973', '1974', '1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            colors: ['#141e61'],
+            backgroundGridBorder: true,
+            backgroundGridVlines: true,
             tooltips: '<strong>%{property:mesannees[%{index}]}</strong> <br>Taux d\'inflation : %{value_formatted}',
             tooltipsFormattedDecimals: '2',
             tooltipsFormattedUnitsPost: '%',
             tooltipsFormattedPoint: ',',
-            backgroundGridVlines: true,
-            backgroundGridBorder: true,
-            colors: ['#141e61'],
             linewidth: 3,
             spline: false,
-            tickmarksStyle: 'circle',
-            tickmarksSize: 1,
             tickmarksColor: '#93b5c6',
+            tickmarksSize: 1,
+            tickmarksStyle: 'circle',
             titleBold: true,
             xaxisLabels: xaxisLabels,
             xaxis: false,
@@ -103,10 +103,10 @@ const dessineMaLigne = () => {
             textFont: '\'Dosis\', sans-serif',
             tooltipsPointer: false,
             tooltipsCss: {
-                fontFamily: '\'Dosis\', sans-serif',
-                fontSize: '18px',
                 backgroundColor: '#212529',
                 boxShadow: '2px 2px 5px #141e61',
+                fontFamily: '\'Dosis\', sans-serif',
+                fontSize: '18px',
                 width: '200px'
             }
         }
@@ -117,13 +117,14 @@ const dessineMaLigne = () => {
             height: 600,
             options: {
                 xaxisLabelsOffsety: 5,
-                yaxisLabelsOffsetx: -5,
-                yaxisTitleOffsetx: -10,
                 xaxisLabelsSize: 16,
+                yaxisLabelsOffsetx: -5,
                 yaxisLabelsSize: 16,
+                yaxisTitleOffsetx: -10,
                 yaxisTitleSize: 16,
                 marginBottom: 80,
-                marginLeft: 50  
+                marginLeft: 50,
+                tooltipsEvent: 'mousemove' 
             }
         },
         {
@@ -133,13 +134,14 @@ const dessineMaLigne = () => {
             options: {
                 xaxisLabelsAngle: 60,
                 xaxisLabelsOffsety: 5,
-                yaxisLabelsOffsetx: -5,
-                yaxisTitleOffsetx: -10,
                 xaxisLabelsSize: 14,
+                yaxisLabelsOffsetx: -5,
                 yaxisLabelsSize: 14,
+                yaxisTitleOffsetx: -10,
                 yaxisTitleSize: 14,
                 marginBottom: 70,
-                marginLeft: 60
+                marginLeft: 60,
+                tooltipsEvent: 'click'
             }
         },
         {
@@ -149,16 +151,16 @@ const dessineMaLigne = () => {
             options: {
                 xaxisLabelsAngle: 70,
                 xaxisLabelsOffsety: 5,
-                yaxisTitleOffsetx: -5,
                 yaxisLabelsSize: 12,
+                yaxisTitleOffsetx: -5,
                 yaxisTitleSize: 12,
-                tooltipsEvent: 'click',
                 marginBottom: 60,
-                marginLeft: 70
+                marginLeft: 70,
+                tooltipsEvent: 'click'
             }
         }
     ]);
-}
+};
 
 // CANVAS THERMOMETER ----------------------------------------
 
@@ -169,10 +171,11 @@ const dessineMonThermometre = () => {
         max: 10,
         value: 6.6,
         options: {
+            colors: ['Gradient(#141e61:#00296b:#141e61)'],
+            labelsValueBold: true,
             marginLeft: 45,
             marginRight: 45,
             marginTop: 50,
-            colors: ['#141e61'],
             title: 'Montréal',
             titleOffsety: -5,
             scaleDecimals: '1',
@@ -181,8 +184,6 @@ const dessineMonThermometre = () => {
             shadow: true,
             shadowColor: '#141e61',
             shadowBlur: 5,
-            colors: ['Gradient(#141e61:#00296b:#141e61)'],
-            labelsValueBold: true,
             textFont: '\'Dosis\', sans-serif'
         }
     }).draw().responsive([
@@ -218,10 +219,11 @@ const dessineMonThermometre = () => {
         max: 10,
         value: 4.6,
         options: {
+            colors: ['Gradient(#141e61:#00296b:#141e61)'],
+            labelsValueBold: true,
             marginLeft: 45,
             marginRight: 45,
             marginTop: 50,
-            colors: ['#141e61'],
             title: 'Québec',
             titleOffsety: -5,
             scaleDecimals: '1',
@@ -230,8 +232,6 @@ const dessineMonThermometre = () => {
             shadow: true,
             shadowColor: '#141e61',
             shadowBlur: 5,
-            colors: ['Gradient(#141e61:#00296b:#141e61)'],
-            labelsValueBold: true,
             textFont: '\'Dosis\', sans-serif'
         }
     }).draw().responsive([
@@ -260,7 +260,7 @@ const dessineMonThermometre = () => {
             }
         }
     ]);
-}
+};
 
 // CANVAS DONUT -----------------------------------------------
 
@@ -271,26 +271,26 @@ const dessineMonBeigne = () => {
         id: 'donut',
         data: data,
         options: {
+            variant: 'donut',
+            colors: [ '#054a29', '#ffaa4c', '#7d0633', '#141e61'],
+            colorsStroke: '#d2d2d2',
+            labelsSticksLinewidth: 2,
+            linewidth: 5,
+            marginBottom: 25,
             tooltips: '<strong>%{property:labels[%{index}]} : </strong>%{key}',
             tooltipsFormattedKeyLabels: data,
             tooltipsFormattedDecimals: '1',
             tooltipsFormattedUnitsPost: '%',
             tooltipsFormattedPoint: ',',
-            linewidth: 5,
-            labelsSticksLinewidth: 2,
-            colorsStroke: '#d2d2d2',
-            colors: [ '#054a29', '#ffaa4c', '#7d0633', '#141e61'],
-            variant: 'donut',
             shadow: false,
             textFont: '\'Dosis\', sans-serif',
-            marginBottom: 25,
             tooltipsFormattedKeyColorsShape: 'circle',
             tooltipsPointer: false,
             tooltipsCss: {
-                fontFamily: '\'Dosis\', sans-serif',
-                fontSize: '18px',
                 backgroundColor: '#212529',
                 boxShadow: '2px 2px 5px #141e61',
+                fontFamily: '\'Dosis\', sans-serif',
+                fontSize: '18px',
                 textAlign: 'left',
                 width: '160px'
             }
@@ -301,9 +301,9 @@ const dessineMonBeigne = () => {
             width: 600,
             height: 450,
             options: {
-                tooltipsEvent: 'mousemove',
+                labels: ['Autres pays','Américains', 'Autres provinces', 'Québec'],
                 labelsSize: 16,
-                labels: ['Autres pays','Américains', 'Autres provinces', 'Québec'] 
+                tooltipsEvent: 'mousemove'
             }
         },
         {
@@ -311,9 +311,10 @@ const dessineMonBeigne = () => {
             width: 400,
             height: 400,
             options: {
-                labelsSize: 14,
                 labels: ['Autre', 'USA', 'CA', 'QC'],
-                marginRight: 50
+                labelsSize: 14,
+                marginRight: 50,
+                tooltipsEvent: 'click'
             }
         },
         {
@@ -321,14 +322,14 @@ const dessineMonBeigne = () => {
             width: 400,
             height: 300,
             options: {
-                tooltipsEvent: 'click',
-                labelsSize: 12,
                 labels: ['Autre', 'USA', 'CA', 'QC'],
-                marginLeft: 40
+                labelsSize: 12,
+                marginLeft: 40,
+                tooltipsEvent: 'click'
             }
         }
     ]);
-}
+};
 
 // SVG SEMI-CIRCULAR PROGRESS BAR ------------------------------
 
@@ -340,20 +341,20 @@ const dessineMonDemiCercle = () => {
         max: 100,
         value: 78,
         options: {
-            scaleUnitsPost: '%',
-            tooltips: 'Portion du Québec en terre : %{value}%',
             backgroundFill: '#141e61',
             backgroundFillOpacity: 1,
             backgroundStroke: '#fff',
             backgroundStrokeLinewidth: 2,
             colors: ['#054a29'],
+            scaleUnitsPost: '%',
             textFont: '\'Dosis\', sans-serif',
+            tooltips: 'Portion du Québec en terre : %{value}%',
             tooltipsPointer: false,
             tooltipsCss: {
-                fontFamily: '\'Dosis\', sans-serif',
-                fontSize: '18px',
                 backgroundColor: '#212529',
                 boxShadow: '2px 2px 5px #141e61',
+                fontFamily: '\'Dosis\', sans-serif',
+                fontSize: '18px',
                 textAlign: 'left',
                 width: '250px'
             }
@@ -365,8 +366,8 @@ const dessineMonDemiCercle = () => {
             height: 300,
             options: {
                 textSize: 16,
-                tooltipsEvent: 'mousemove',
-                marginBottom: 50
+                marginBottom: 50,
+                tooltipsEvent: 'mousemove'
             }
         },
         {
@@ -374,7 +375,8 @@ const dessineMonDemiCercle = () => {
             width: 500,
             height: 250,
             options: {
-                textSize: 14
+                textSize: 14,
+                tooltipsEvent: 'click'
             }
         },
         {
@@ -387,7 +389,7 @@ const dessineMonDemiCercle = () => {
             }
         }
     ]);
-}
+};
 
 // SVG BAR CHART -----------------------------------------------
 
@@ -401,32 +403,32 @@ const dessineMesBarres = () => {
         options: {
             backgroundGridVlines: false,
             backgroundGridBorder: false,
+            colors: ['#141e61', '#7d0633', '#ffaa4c', '#054a29', '#540d6e'],
+            yaxisLinewidth: 2,
+            yaxisScaleMax: 40,
             yaxisTitle: 'Pourcentage (%)',
             yaxisTitleItalic: true,
-            yaxisScaleMax: 40,
-            xaxisLinewidth: 2,
-            yaxisLinewidth: 2,
-            xaxisTickmarks: false,
             xaxisLabels: '%{global:labels[%{index}]}',
-            colors: ['#141e61', '#7d0633', '#ffaa4c', '#054a29', '#540d6e'],
+            xaxisLinewidth: 2,
+            xaxisTickmarks: false,
             tooltips: '%{key}',
             tooltipsFormattedDecimals: 2,
             tooltipsFormattedPoint: ',',
             tooltipsFormattedUnitsPost: '%',
             tooltipsFormattedKeyColorsShape: 'circle',
             key: ['1 pers', '2 pers', '3 pers', '4 pers', '5 + pers'],
-            keyOffsety: -20,
-            keyOffsetx: 15,
             keyColorShape: 'circle',
-            textFont: '\'Dosis\', sans-serif',
+            keyOffsetx: 15,
+            keyOffsety: -20,
             highlightStroke: '#fff',
             highlightLinewidth: 1,
-            tooltipsPointer: false,          
+            textFont: '\'Dosis\', sans-serif',
+            tooltipsPointer: false,
             tooltipsCss: {
-                fontFamily: '\'Dosis\', sans-serif',
-                fontSize: '18px',
                 backgroundColor: '#212529',
                 boxShadow: '2px 2px 5px #141e61',
+                fontFamily: '\'Dosis\', sans-serif',
+                fontSize: '18px',
                 width: '100px'
             }
         }
@@ -436,17 +438,16 @@ const dessineMesBarres = () => {
             width: 800,
             height: 600,
             options: {
-                tooltipsEvent: 'mousemove',
+                xaxisLabelsSize: 16,
                 yaxisLabelsSize: 16,
                 yaxisTitleSize: 16,
-                xaxisLabelsSize: 16,
-                marginBottom: 50,
-                marginLeft: 70,
-                marginTop: 60,
-                marginBottom: 60,
                 marginInner: 15,
                 marginInnerGrouped: 5,
-                keyLabelsSize: 16
+                marginBottom: 60,
+                marginLeft: 70,
+                marginTop: 60,
+                keyLabelsSize: 16,
+                tooltipsEvent: 'mousemove'
             }
         },
         {
@@ -454,16 +455,16 @@ const dessineMesBarres = () => {
             width: 500,
             height: 350,
             options: {
+                xaxisLabelsSize: 14,
                 yaxisLabelsSize: 14,
                 yaxisTitleSize: 14,
-                xaxisLabelsSize: 14,
-                tooltipsEvent: 'click',
+                marginInner: 10,
+                marginInnerGrouped: 3,
                 marginBottom: 50,
                 marginLeft: 70,
                 marginTop: 60,
-                marginInner: 10,
-                marginInnerGrouped: 3,
-                keyLabelsSize: 14
+                keyLabelsSize: 14,
+                tooltipsEvent: 'click'
             }
         },
         {
@@ -471,21 +472,21 @@ const dessineMesBarres = () => {
             width: 400,
             height: 300,
             options: {
+                xaxisLabelsSize: 12,
                 yaxisLabelsSize: 12,
                 yaxisTitleSize: 12,
                 yaxisTitleOffsetx: -5,
-                xaxisLabelsSize: 12,
-                tooltipsEvent: 'click',
+                marginInner: 5,
+                marginInnerGrouped: 2,
                 marginBottom: 50,
                 marginLeft: 60,
                 marginTop: 60,
-                marginInner: 5,
-                marginInnerGrouped: 2,
-                keyLabelsSize: 12
+                keyLabelsSize: 12,
+                tooltipsEvent: 'click'
             }
         }
     ]);
-}
+};
 
 // -------------------------------------------------------------
 
@@ -496,6 +497,6 @@ const appelerToutesLesFonctions = () => {
     dessineMonBeigne();
     dessineMonDemiCercle();
     dessineMesBarres();
-}
+};
 
 appelerToutesLesFonctions();
